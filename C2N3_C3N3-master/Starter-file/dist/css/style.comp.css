@@ -10,4 +10,6 @@ body {
 
 h1 {
   color: #BFDBEA;
- }
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase; }
