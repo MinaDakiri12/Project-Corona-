@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:600&display=swap%22");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap%22");
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Josefin Sans', sans-serif; }
+
+h1 {
+  color: #BFDBEA;
+ }
