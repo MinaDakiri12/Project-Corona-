@@ -1,0 +1,17 @@
+
+@import'variables';
+
+.header{
+    background-image: url("/C2N3_C3N3-master/Design/Assets/png/Merged\ bar-1.png");
+}
+
+.infoMedicale{
+    background-color: $color-secondary;
+    height: 9rem;
+    p{
+        text-align: center;
+        font-size: 1rem;
+    }
+}
+
+

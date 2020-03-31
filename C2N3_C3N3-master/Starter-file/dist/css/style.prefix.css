@@ -9,7 +9,19 @@ body {
   font-family: 'Josefin Sans', sans-serif; }
 
 h1 {
-  color: #BFDBEA;
+  color: #5DA3C7;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   text-transform: uppercase; }
+
+.header {
+  background-image: url("/C2N3_C3N3-master/Design/Assets/png/Merged bar-1.png"); }
+
+.infoMedicale {
+  background-color: #F4CF1B;
+  height: 9rem; }
+  .infoMedicale p {
+    text-align: center;
+    font-size: 1rem; }
