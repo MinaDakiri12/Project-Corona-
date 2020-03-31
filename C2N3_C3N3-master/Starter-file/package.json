@@ -12,15 +12,14 @@
     "building-prod": "npm-run-all compress:css",
     "fin-production": "===========================================",
     "Mode-dev": "==============Branch dev==============",
-    "watch-dev": "node-sass sass/main.scss dist/css/style.prefix.css -w",
+    "watch": "node-sass -w sass -o css",
+    "compile": "node-sass sass -o css/style.comp.css",
     "start:dev": "concurrently \"npm run server:prod\" \"npm run watch-dev\"",
-    "compiler:sass": "node-sass sass/main.scss dist/css/style.comp.css -w",
     "concat:css": "concat -o dist/css/style.concat.css dist/css/all.css dist/css/style.comp.css",
     "prefix:css": "postcss dist/css/style.concat.css --use autoprefixer -o dist/css/style.prefix.css",
     "building-dev": "npm-run-all compiler:sass concat:css prefix:css",
     "fin-dev": "==============Branch dev=============="
   },
-  
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -38,6 +37,5 @@
   "browserslist": [
     "defaults",
     "last 3 versions"
-]
+  ]
 }
-
