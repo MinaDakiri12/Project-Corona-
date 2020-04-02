@@ -118,7 +118,7 @@ nav ul li a {
     left: 0; } }
 
 /*nav barre*/
-.buttontest {
+button {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -135,9 +135,9 @@ nav ul li a {
   font-size: 16px;
   font-weight: bolder; }
 
-.buttontest {
+button {
   margin-top: 40px; }
-  .buttontest:hover {
+  button:hover {
     color: #FFFFFF;
     background-color: #1078AD; }
 
@@ -271,3 +271,22 @@ nav ul li a {
   color: #F4CF1B;
   font-size: 27px;
   padding-right: 9px; }
+
+.Footer1 {
+  background-color: #96C5DC;
+  margin-top: -10px;
+  padding-bottom: 20px; }
+  .Footer1__title {
+    padding-top: 20px;
+    color: #1078AD;
+    text-align: center;
+    font-size: 29px; }
+  .Footer1__emoji {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .Footer1__button {
+    width: 40%;
+    margin-top: 3px; }

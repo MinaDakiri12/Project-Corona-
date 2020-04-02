@@ -25,7 +25,7 @@
       
   }
 
-  .buttontest{
+  button{
       @include hover();
       @extend %btn;
       margin-top: 40px;
