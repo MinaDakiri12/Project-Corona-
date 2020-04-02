@@ -118,7 +118,7 @@ nav ul li a {
     left: 0; } }
 
 /*nav barre*/
-button {
+.buttontest {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -135,9 +135,11 @@ button {
   font-size: 16px;
   font-weight: bolder; }
 
-button:hover {
-  color: #FFFFFF;
-  background-color: #1078AD; }
+.buttontest {
+  margin-top: 40px; }
+  .buttontest:hover {
+    color: #FFFFFF;
+    background-color: #1078AD; }
 
 .symptomes {
   margin: 0 80px 80px;
