@@ -1,3 +1,4 @@
+
 .Footer1{
     background-color: $color-accent;
     margin-top: -10px;
@@ -16,7 +17,9 @@
         margin-right: auto;
     }
     &__button{
-        width: 40%;
+        width: 38%;
         margin-top: 3px;
+        font-weight: bold;
+       
     }
 }
