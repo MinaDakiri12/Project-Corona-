@@ -195,10 +195,80 @@ button:hover {
     margin-top: 18px;
     color: #1078AD; }
 
-.war {
+.recommandations {
+  background-color: #1078AD;
+  height: 370px; }
+  .recommandations__title {
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 30px; }
+  .recommandations__para {
+    display: inline;
+    margin-left: 203px;
+    color: #FFFFFF;
+    font-size: 24px; }
+  .recommandations__appelez {
+    color: #F4CF1B;
+    font-size: 24px;
+    font-weight: 700;
+    float: right;
+    margin-right: 215px;
+    margin-top: 20px; }
+  .recommandations__wrapper {
+    margin: 10px 120px;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%; }
+  .recommandations__wrapper p {
+    color: #FFFFFF;
+    font-weight: 700; }
+  .recommandations__wrapper--rec1 {
+    grid-area: 2/1; }
+  .recommandations__wrapper--rec2 {
+    grid-area: 3/1; }
+  .recommandations__wrapper--rec3 {
+    grid-area: 4/1; }
+  .recommandations__wrapper--rec4 {
+    grid-area: 5/1; }
+  .recommandations__wrapper--rec5 {
+    grid-area: 6/1; }
+  .recommandations__wrapper--num1 {
+    grid-area: 2/2;
+    background-color: #F4CF1B;
+    width: 200px;
+    height: 40px;
+    margin-left: 45px;
+    padding-top: 11px;
+    text-align: center; }
+  .recommandations__wrapper--pr1 {
+    font-size: 25px;
+    color: #1078AD; }
+  .recommandations__wrapper--num2 {
+    grid-area: 4/2;
+    background-color: #F4CF1B;
+    width: 200px;
+    height: 40px;
+    margin-left: 45px;
+    padding-top: 11px;
+    text-align: center; }
+  .recommandations__wrapper--pr2 {
+    font-size: 25px;
+    color: #1078AD; }
+  .recommandations__wrapper--num3 {
+    grid-area: 6/2;
+    background-color: #F4CF1B;
+    width: 200px;
+    height: 40px;
+    margin-left: 45px;
+    padding-top: 11px;
+    text-align: center; }
+  .recommandations__wrapper--pr3 {
+    font-size: 25px;
+    color: #1078AD; }
+
+.attention {
   color: #F4CF1B;
   font-size: 27px;
-  padding-right: 20px; }
-
-.recommandations {
-  background-color: #1078AD; }
+  padding-right: 9px; }
