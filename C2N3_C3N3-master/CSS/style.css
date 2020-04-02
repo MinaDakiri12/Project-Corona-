@@ -194,3 +194,11 @@ button:hover {
     font-weight: 900;
     margin-top: 18px;
     color: #1078AD; }
+
+.war {
+  color: #F4CF1B;
+  font-size: 27px;
+  padding-right: 20px; }
+
+.recommandations {
+  background-color: #1078AD; }
