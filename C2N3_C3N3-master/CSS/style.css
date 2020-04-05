@@ -365,3 +365,105 @@ button {
     width: 38%;
     margin-top: 3px;
     font-weight: bold; }
+
+.protection img {
+  width: 130px;
+  height: 130px;
+  margin-bottom: 40px;
+  margin-top: 50px; }
+
+.protection__title {
+  text-align: center;
+  color: #1078AD;
+  font-size: 2rem;
+  padding-top: 40px; }
+
+.protection__wrapper {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 24% 10% 24% 10% 24% 10%;
+  margin: 40px 40px; }
+
+.protection__wrapper--icn1 {
+  grid-area: 1/1;
+  margin-left: auto;
+  margin-right: auto; }
+
+.protection__icn1--title {
+  grid-area: 2/1;
+  text-align: center;
+  color: #1078AD;
+  font-weight: bold;
+  font-size: 21px; }
+
+.protection__wrapper--icn2 {
+  grid-area: 1/2;
+  margin-left: auto;
+  margin-right: auto; }
+
+.protection__icn2--title {
+  grid-area: 2/2;
+  text-align: center;
+  color: #1078AD;
+  font-weight: bold;
+  font-size: 21px; }
+
+.protection__wrapper--icn3 {
+  grid-area: 1/3;
+  margin-left: auto;
+  margin-right: auto; }
+
+.protection__icn3--title {
+  grid-area: 2/3;
+  text-align: center;
+  color: #1078AD;
+  font-weight: bold;
+  font-size: 21px; }
+
+.protection__wrapper--icn4 {
+  grid-area: 3/1;
+  margin-left: auto;
+  margin-right: auto; }
+
+.protection__icn4--title {
+  grid-area: 4/1;
+  text-align: center;
+  color: #1078AD;
+  font-weight: bold;
+  font-size: 21px; }
+
+.protection__wrapper--icn5 {
+  grid-area: 3/2;
+  margin-left: auto;
+  margin-right: auto; }
+
+.protection__icn5--title {
+  grid-area: 4/2;
+  text-align: center;
+  color: #1078AD;
+  font-weight: bold;
+  font-size: 21px; }
+
+.protection__wrapper--icn6 {
+  grid-area: 3/3;
+  margin-left: auto;
+  margin-right: auto; }
+
+.protection__icn6--title {
+  grid-area: 4/3;
+  text-align: center;
+  color: #1078AD;
+  font-weight: bold;
+  font-size: 21px; }
+
+.protection__wrapper--icn7 {
+  grid-area: 5/2;
+  margin-left: auto;
+  margin-right: auto; }
+
+.protection__icn7--title {
+  grid-area: 6/2;
+  text-align: center;
+  color: #1078AD;
+  font-weight: bold;
+  font-size: 21px; }
