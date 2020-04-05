@@ -111,7 +111,38 @@ img{
     font-weight: bold;
     font-size: 21px;
 }
-
 }
+.informations{
+    background-color:$color-accent;
+
+    &__title{
+        text-align: center;
+        color: $color-primary ;
+        font-size: 2rem;
+        padding-top: 1rem;
+        padding-bottom: .1rem;
+    }
+  &__para{
+      text-align: center;
+      font-weight: bold;
+      padding-bottom: 1rem;
+      font-size: 21px;
+      color: $color-bleu;
+  }
+  &__link{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+    color: $footer-color;
+    background-image: url(/C2N3_C3N3-master/Design/Assets/png/btn-bg.png);
+    width: 20%;
+    border-radius: 7px;
+  
+  }  
+   
+  }
+
 
 

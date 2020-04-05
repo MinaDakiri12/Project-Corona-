@@ -323,13 +323,13 @@ button {
 .footer__right--acceuil {
   text-align: center;
   font-weight: bold;
-  border-bottom: 1px solid #96C5DC;
+  border-bottom: 1px solid #D0E5F0;
   width: 30rem;
   padding-bottom: .1rem; }
 
 .footer__right--conseils {
   text-align: center;
-  border-bottom: 1px solid #96C5DC;
+  border-bottom: 1px solid #D0E5F0;
   padding-bottom: .1rem;
   width: 30rem; }
 
@@ -347,7 +347,7 @@ button {
   height: 35px; }
 
 .Footer1 {
-  background-color: #96C5DC;
+  background-color: #D0E5F0;
   margin-top: -10px;
   padding-bottom: 20px; }
   .Footer1__title {
@@ -467,3 +467,28 @@ button {
   color: #1078AD;
   font-weight: bold;
   font-size: 21px; }
+
+.informations {
+  background-color: #D0E5F0; }
+  .informations__title {
+    text-align: center;
+    color: #1078AD;
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: .1rem; }
+  .informations__para {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    font-size: 21px;
+    color: #1A519E; }
+  .informations__link {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+    color: #FFFFFF;
+    background-image: url(/C2N3_C3N3-master/Design/Assets/png/btn-bg.png);
+    width: 20%;
+    border-radius: 7px; }
