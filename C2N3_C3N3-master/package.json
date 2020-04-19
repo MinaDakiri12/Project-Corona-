@@ -7,7 +7,7 @@
     "watch": "node-sass sass/main.scss css/style.css --watch",
     "compile": "node-sass sass/main.scss css/style.comp.css",
     "concat": "concat -o css/style.concat.css css/additional.css css/style.comp.css",
-    "prefix": "postcss --use autoprefix -b 'last 5 versions' css/style.concat.css -o css/style.prefix.css",
+     "prefix": "postcss --use autoprefix -b 'last 5 versions' css/style.concat.css -o css/style.prefix.css",
     "compress": "node-sass css/style.concat.css css/style.css --output-style compressed",
     "build": "npm-run-all compile concat prefix compress"
 
