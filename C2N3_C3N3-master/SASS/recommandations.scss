@@ -1,11 +1,8 @@
 @import 'variables';
 
-
-
 .recommandations{
  background-color: $color-primary;
- height: 408px;
-
+ 
  &__title{
     color:$footer-color;
     text-align: center;
@@ -35,7 +32,7 @@
 }
 &__wrapper p{
     color: $footer-color ;
-    font-weight: 700;
+    font-size: 19px;
 }
 
 &__wrapper--rec1{
@@ -101,9 +98,54 @@ grid-area: 1/1;
 
 }
 
-
 .attention{
     color: $color-secondary;
     font-size: 27px;
     padding-right:9px;
+}
+@media only screen and (max-width: 575px){
+    .recommandations{
+        height: max-content;
+        margin-top: 20px;
+
+        &__title{
+            font-size:25px;
+        }
+       
+        &__wrapper{   
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        line-height: 1.6rem;
+           
+    }
+    &__wrapper p{
+        font-size: 16px;
+        line-height: 2rem;
+    }
+    &__para{
+        font-size: 15px;
+        margin-left: 6rem
+    }
+    
+    &__appelez{
+            display: none;
+            margin: 0px;   
+    }
+
+    &__wrapper--num1,&__wrapper--num2,&__wrapper--num3{
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 8px;
+        margin-bottom: 20px;
+    }
+    &__wrapper--num1{
+        margin-top: 32px;
+    }
+}
+.attention{
+    
+    font-size: 21px;
+    padding-right:9px;
+}
 }
