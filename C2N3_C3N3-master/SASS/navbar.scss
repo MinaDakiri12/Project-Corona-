@@ -7,16 +7,16 @@ nav{
   .logo{
       padding: 10px 80px;
   }
-  nav ul{
+  nav .nav1{
     float: right;
     margin-right: 80px;
   }
-  nav ul li{
+  nav .nav1, .nav2{
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
   }
-  nav ul li a{
+  nav  .nav1 .nav2 a{
     cursor: pointer;
     color: $color-dark;
     font-size: 18px;
@@ -44,7 +44,7 @@ nav{
     display: none;
   }
   @media (max-width: 952px){
-    nav ul li a{
+    nav .nav1 .nav2 a{
       font-size: 16px;
     }
   }
@@ -52,7 +52,7 @@ nav{
     .checkbtn{
       display: block;
     }
-    ul{
+    .nav1{
       position: fixed;
       background: $color-secondary;
       top: 80px;
@@ -60,16 +60,16 @@ nav{
       text-align: center;
       transition: all .5s;
     }
-    nav ul li{
+    nav .nav1 .nav2{
       display: block;
       margin: 50px 0;
       line-height: 30px;
     }
-    nav ul li a{
+    nav .nav1 .nav2 a{
       font-size: 20px;
     }
   
-    #check:checked ~ ul{
+    #check:checked ~ .nav1{
       left: 0;
     }
   }

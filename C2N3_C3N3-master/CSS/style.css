@@ -90,16 +90,16 @@ nav {
 .logo {
   padding: 10px 80px; }
 
-nav ul {
+nav .nav1 {
   float: right;
   margin-right: 80px; }
 
-nav ul li {
+nav .nav1, .nav2 {
   display: inline-block;
   line-height: 80px;
   margin: 0 5px; }
 
-nav ul li a {
+nav .nav1 .nav2 a {
   cursor: pointer;
   color: #2B2B2C;
   font-size: 18px;
@@ -126,26 +126,26 @@ nav ul li a {
   display: none; }
 
 @media (max-width: 952px) {
-  nav ul li a {
+  nav .nav1 .nav2 a {
     font-size: 16px; } }
 
 @media (max-width: 858px) {
   .checkbtn {
     display: block; }
-  ul {
+  .nav1 {
     position: fixed;
     background: #F4CF1B;
     top: 80px;
     left: -100%;
     text-align: center;
     transition: all .5s; }
-  nav ul li {
+  nav .nav1 .nav2 {
     display: block;
     margin: 50px 0;
     line-height: 30px; }
-  nav ul li a {
+  nav .nav1 .nav2 a {
     font-size: 20px; }
-  #check:checked ~ ul {
+  #check:checked ~ .nav1 {
     left: 0; } }
 
 /*nav barre*/
@@ -282,7 +282,7 @@ button {
     grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66%; }
   .recommandations__wrapper p {
     color: #FFFFFF;
-    font-size: 19px; }
+    font-size: 13px; }
   .recommandations__wrapper--rec1 {
     grid-area: 1/1; }
   .recommandations__wrapper--rec2 {
