@@ -67,7 +67,7 @@
     .heroHeader__right--para {
       line-height: 35px;
       margin-bottom: 30px;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 700;
       width: 100%; } }
 
@@ -173,7 +173,7 @@ button {
 
 @media (max-width: 575px) {
   button {
-    width: 30rem;
+    width: 87%;
     margin-left: auto;
     margin-right: auto;
     padding: 4px;
@@ -252,12 +252,11 @@ button {
       height: 18vw;
       margin-top: 40px; }
     .symptomes__symp1--title, .symptomes__symp2--title, .symptomes__symp3--title, .symptomes__symp4--title {
-      font-size: 1rem;
+      font-size: 17px;
       font-weight: bold; } }
 
 .recommandations {
-  background-color: #1078AD;
-  height: 408px; }
+  background-color: #1078AD; }
   .recommandations__title {
     color: #FFFFFF;
     text-align: center;
@@ -283,7 +282,7 @@ button {
     grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66%; }
   .recommandations__wrapper p {
     color: #FFFFFF;
-    font-weight: 700; }
+    font-size: 19px; }
   .recommandations__wrapper--rec1 {
     grid-area: 1/1; }
   .recommandations__wrapper--rec2 {
@@ -329,6 +328,37 @@ button {
   color: #F4CF1B;
   font-size: 27px;
   padding-right: 9px; }
+
+@media only screen and (max-width: 575px) {
+  .recommandations {
+    height: max-content;
+    margin-top: 20px; }
+    .recommandations__title {
+      font-size: 25px; }
+    .recommandations__wrapper {
+      display: flex;
+      flex-direction: column;
+      font-size: 12px;
+      line-height: 1.6rem; }
+    .recommandations__wrapper p {
+      font-size: 16px;
+      line-height: 2rem; }
+    .recommandations__para {
+      font-size: 15px;
+      margin-left: 6rem; }
+    .recommandations__appelez {
+      display: none;
+      margin: 0px; }
+    .recommandations__wrapper--num1, .recommandations__wrapper--num2, .recommandations__wrapper--num3 {
+      margin-right: auto;
+      margin-left: auto;
+      padding-top: 8px;
+      margin-bottom: 20px; }
+    .recommandations__wrapper--num1 {
+      margin-top: 32px; }
+  .attention {
+    font-size: 21px;
+    padding-right: 9px; } }
 
 .footer__wrapper {
   display: grid;
@@ -423,6 +453,12 @@ button {
     width: 38%;
     margin-top: 3px;
     font-weight: bold; }
+
+@media only screen and (max-width: 575px) {
+  .Footer1__title {
+    font-size: 26px; }
+  .Footer1__button {
+    width: 90%; } }
 
 .protection img {
   width: 130px;
