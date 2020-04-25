@@ -65,3 +65,31 @@
     }
 
 }
+@media (max-width: 575px){
+    .symptomes{
+        display: grid;
+        grid-template-rows: 16% 40% 40%;
+        margin: 0px;
+
+        &__title{
+            font-size: 2.2rem;
+            line-height: 1.2em;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        &__symp1--img,&__symp2--img,&__symp3--img,&__symp4--img{
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+            height: 18vw;
+            margin-top: 40px;
+        }
+        &__symp1--title,&__symp2--title,&__symp3--title,&__symp4--title{
+            font-size: 1rem;
+            font-weight: bold;
+            
+        }
+
+    }
+
+}

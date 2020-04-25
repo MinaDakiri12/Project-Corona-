@@ -235,6 +235,26 @@ button {
     margin-top: 18px;
     color: #1078AD; }
 
+@media (max-width: 575px) {
+  .symptomes {
+    display: grid;
+    grid-template-rows: 16% 40% 40%;
+    margin: 0px; }
+    .symptomes__title {
+      font-size: 2.2rem;
+      line-height: 1.2em;
+      margin-top: auto;
+      margin-bottom: auto; }
+    .symptomes__symp1--img, .symptomes__symp2--img, .symptomes__symp3--img, .symptomes__symp4--img {
+      margin-left: auto;
+      margin-right: auto;
+      width: auto;
+      height: 18vw;
+      margin-top: 40px; }
+    .symptomes__symp1--title, .symptomes__symp2--title, .symptomes__symp3--title, .symptomes__symp4--title {
+      font-size: 1rem;
+      font-weight: bold; } }
+
 .recommandations {
   background-color: #1078AD;
   height: 408px; }
