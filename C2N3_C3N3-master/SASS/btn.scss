@@ -12,9 +12,8 @@
     border: 2px solid $color-primary;
     border-radius: 10px;
     text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bolder;
+    font-size: 22px;
+    font-weight: 700;
   }
 
   @mixin hover {
@@ -29,5 +28,15 @@
       @include hover();
       @extend %btn;
       margin-top: 40px;
+  }
+
+  @media (max-width: 575px){
+    button{
+     width: 30rem;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 4px;
+     margin-bottom: 35px;
+    }
   }
   

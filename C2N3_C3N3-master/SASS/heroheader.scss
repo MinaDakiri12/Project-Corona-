@@ -2,14 +2,14 @@
 
 .infoMedicale {
     background-color: $color-secondary;
-    &--title {
+    &__title {
         text-align: center;
         text-transform: uppercase;
         color: $color-primary;
         padding-top: 20px;
         font-size: 1.6rem;
     }
-    &--para {
+    &__para {
         text-align: center;
         padding: 10px 240px 20px;
         line-height: 1.6em;
@@ -44,6 +44,53 @@
         font-weight: 700;
         line-height: 30px;
         margin-bottom: 40px;
+    }
+}
+@media (max-width: 575px){
+    .infoMedicale {
+        &__title {
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center
+        }
+        &__para {
+            padding: 20px 40px;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: justify;
+            text-align-last: center;
+        }
+    }
+    .heroHeader {
+        margin: 0;
+        display: flex;
+        flex-direction: column-reverse;
+        &__left--img img {
+            width: 90vw;
+            position: relative;
+            left: 50%;
+           transform: translateX(-50%);
+            margin: 40px auto;  
+        }
+
+        &__right--title {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            font-size: 30px;
+            
+        }
+
+        &__right--para {
+            line-height: 35px;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 700;
+            width: 100%;
+
+        }
+        
+        
     }
 }
 
