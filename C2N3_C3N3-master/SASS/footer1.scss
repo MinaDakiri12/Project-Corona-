@@ -23,3 +23,16 @@
        
     }
 }
+@media only screen and (max-width: 575px){
+    .Footer1{
+
+    &__title{
+        font-size: 25px;
+    }
+    &__button{
+        width: 90%;
+}
+
+
+}
+}
