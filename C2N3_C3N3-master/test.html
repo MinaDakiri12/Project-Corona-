@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" href="/Design/Assets/png/logo__sante.png">
+        <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"></script>
+        <link
+            rel="stylesheet"
+            href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css">
+
+        <title>مرض الفيروس التاجي - اختبر أعراض الفيروس التاجي 19 </title>
+        <link rel="shortcut icon" href="Design/Assets/png/logo__sante-63.png" type="image/png">
+    </head>
+    <body>
+        <nav>
+            <ul class="menu">
+                <li class="logo">
+                    <img src="Design/Assets/png/logo__sante-63.png" alt="Logo ministre de la santé"></a>
+                </li>
+               
+                <li class="item">
+                    <a href="/C2N3_C3N3-master/conseil.html">Conseils</a>
+                </li>
+                <li class="item">
+                    <a href="/C2N3_C3N3-master/accueil.html" class="actv">Accueil</a>
+                </li>
+                
+                <li class="toggle">
+                    <span class="bars"></span></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <section class="progressbar">
+                <h1 class="active">Informations</h1>
+                <h1>Questionnaire</h1>
+                <h1>Résultats</h1>
+            </section>
+        </div>
+
+        <script>
+            $(function () {
+                $(".toggle").on("click", function () {
+                    if ($(".item").hasClass("active")) {
+                        $(".item").removeClass("active");
+                    } else {
+                        $(".item").addClass("active");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
