@@ -1,78 +1,160 @@
 @import 'variables';
-nav{
-    background-image: url("/C2N3_C3N3-master/Design/Assets/png/Merged\ bar-5.png");
-    height: 72px
 
+nav {
+  background-image: url("/C2N3_C3N3-master/Design/Assets/png/Merged\ bar-5.png");
+  padding: 0px 5vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color:$color-dark;
+  font-size: 18px;
+}
+a:hover{
+  font-weight: 900;
+  color:$color-primary;
+}
+.lang{
+  width: 32px;
+  height: 32px;
+  margin-top: 12px;
+}
+.logo img{
+  width: 2px;
+  height: auto;
+}
+
+.menu li {
+  font-size: 16px;
+  white-space: nowrap;
+}
+.actv{
+  font-weight: 900;
+  color:$color-primary;
+}
+
+/* Mobile menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle {
+  order: 1;
+}
+
+.item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+}
+.item.active {
+  display: block;
+}
+.lang{
+  margin-left: 210px;
+  margin-top: 18px;
+  margin-right: 0px;
+}
+.logo img{
+  width: 50px;
+  height: auto;
+  margin-top: 12px;
+}
+
+/* Navbar Toggle */
+
+.toggle {
+  cursor:pointer;
+}
+.bars {
+  background: $color-dark;
+  display: inline-block;
+  position: relative;
+  transition: background.2s ease-out;
+  width: 1.6em;
+  height: .2em;
+}
+.bars:before,
+.bars:after {
+  background:$color-dark;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+.bars:before {
+  top: 5px;
+}
+.bars:after {
+  top: -5px;
+}
+
+/* Tablet menu */
+@media  (min-width: 768px) {
+  .logo img{
+    width: 240px;
+    height: auto;
   }
-  .logo{
-      padding: 10px 80px;
-  }
-  nav .nav1{
-    float: right;
-    margin-right: 80px;
-  }
-  nav .nav1, .nav2{
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-  }
-  nav  .nav1 .nav2 a{
-    cursor: pointer;
-    color: $color-dark;
-    font-size: 18px;
-    padding: 7px 13px;
-  }
-  .conseils:hover{
-    color: $color-primary;
-    font-weight: bold;
-  }
-  .active{
-      font-weight: bold;
-      color: $color-primary;
-  }
-  
-  .checkbtn{
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-  }
-  #check{
-    display: none;
-  }
-  @media (max-width: 952px){
-    nav .nav1 .nav2 a{
-      font-size: 16px;
-    }
-  }
-  @media (max-width: 858px){
-    .checkbtn{
-      display: block;
-    }
-    .nav1{
-      position: fixed;
-      background: $color-secondary;
-      top: 80px;
-      left: -100%;
-      text-align: center;
-      transition: all .5s;
-    }
-    nav .nav1 .nav2{
-      display: block;
-      margin: 50px 0;
-      line-height: 30px;
-    }
-    nav .nav1 .nav2 a{
-      font-size: 20px;
-    }
-  
-    #check:checked ~ .nav1{
-      left: 0;
-    }
+  .menu {
+      justify-content: center;
   }
 
-/*nav barre*/
+  .logo {
+      flex: 1;
+  }
+
+  .toggle {
+      order: 2;
+  }
+
+}
+
+/* Desktop menu */
+@media all and (min-width: 768px) {
+  .lang{
+    margin-right: 30px;
+    margin-top: 12px;
+  }
+  .logo img{
+    width: 3rem;
+    height: auto;
+  }
+  .item {
+      display: block;
+      width: auto;
+  }
+  .toggle {
+      display: none;
+  }
+  .logo {
+      order: 0;
+  }
+  .item {
+      order: 1;
+  }
+  .menu li {
+      padding: 15px 10px;
+  }
+  .menu li.button {
+      padding-right: 0;
+  }
+}
+
+@media (min-width: 575px)and(max-width: 1024px){
+  .logo img{
+    width: 20%;
+    height: auto;
+  }
+}
+
+
   
