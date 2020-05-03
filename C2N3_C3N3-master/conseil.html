@@ -8,6 +8,11 @@
         <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous"></script>
+        
         <link
             rel="stylesheet"
             href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css">
@@ -17,18 +22,20 @@
     </head>
     <body>
         <nav>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <label><img class="logo" src="Design/Assets/png/logo__sante-63.png" alt="logo"></label>
-            <ul class="nav1">
-                <li class="nav2">
-                    <a class="conseils" href="conseil.html">Conseils</a>
+            <ul class="menu">
+                <li class="logo">
+                    <img src="Design/Assets/png/logo__sante-63.png" alt="Logo ministre de la santé"></a>
                 </li>
-                <li class="nav2">
-                    <a class="active" href="accueil.html">Acceuil</a>
+               
+                <li class="item">
+                    <a href="/C2N3_C3N3-master/conseil.html">Conseils</a>
                 </li>
+                <li class="item">
+                    <a href="/C2N3_C3N3-master/accueil.html" class="actv">Accueil</a>
+                </li>
+                
+                <li class="toggle">
+                    <span class="bars"></span></li>
             </ul>
         </nav>
         <section class="protection">
@@ -183,5 +190,16 @@
             </div>
             <div class="bottom-footer"></div>
         </footer>
+        <script>
+            $(function () {
+                $(".toggle").on("click", function () {
+                    if ($(".item").hasClass("active")) {
+                        $(".item").removeClass("active");
+                    } else {
+                        $(".item").addClass("active");
+                    }
+                });
+            });
+        </script>
     </body>
     </html>
