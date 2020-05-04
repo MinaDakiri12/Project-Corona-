@@ -61,3 +61,45 @@ h1{
     }
 }
 }
+.Préambule {
+    width: 80%;
+    background-color: $color-gry;
+    margin: 0 auto;
+    padding: 20px 40px;
+    border-radius:  1rem;
+
+    h1{
+        font-size: 25px;
+        font-weight: 900;
+        margin-bottom: 30px;
+        text-align: center;
+         color: $color-primary;
+    }
+
+    hr{
+        width: 100%;
+        margin-bottom: 1.5rem;
+        border: .1px solid $color-g;
+    }
+
+    &__paragraph1{
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-align: justify;
+        text-align-last: center;
+        line-height: 30px;
+        margin-bottom: 3rem;
+    }
+    &__paragraph2{
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-align: justify;
+        text-align-last: center;
+        line-height: 30px;
+        margin-bottom: 3rem;
+    }
+  
+
+    
+
+}
