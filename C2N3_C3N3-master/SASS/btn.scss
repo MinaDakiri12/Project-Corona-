@@ -1,5 +1,5 @@
 @import 'variables';
-%btn{
+%btn1{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -24,14 +24,21 @@
       
   }
 
-  button{
+.button1{
       @include hover();
-      @extend %btn;
+      @extend %btn1;
       margin-top: 40px;
+  }
+  .Footer1{
+    &__button2{
+      @include hover();
+      @extend %btn1;
+      width: 40%;
+    }
   }
 
   @media (max-width: 575px){
-    button{
+    .button1{
      width: 87%;
      margin-left: auto;
      margin-right: auto;
