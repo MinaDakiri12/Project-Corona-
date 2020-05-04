@@ -5,7 +5,7 @@
     margin: 60px 280px 20px;
     
 }
-.progressbar{
+.stepper{
     display: grid;
     grid-template-columns: 33% 33% 33%;
 
@@ -116,7 +116,8 @@ h1{
     transition: all 0.3s ease;
 
     &:hover {
-        color: $color-primary;
-        background-color: transparent;
+        color: $footer-color;
+        background-color: $color-primary;
+        
     }
 }
