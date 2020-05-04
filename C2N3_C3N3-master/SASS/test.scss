@@ -103,3 +103,20 @@ h1{
     
 
 }
+.start{
+    margin-bottom: 40px;
+    width: 17%;
+    font-size: 1rem;
+    color: $color-primary;
+    background-color: $color-accent;
+    border: 2px solid;
+    background-color: rgba(147, 209, 240, 0.2);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $color-primary;
+        background-color: transparent;
+    }
+}

@@ -33,7 +33,7 @@
     padding-bottom: 30px; }
   .heroHeader__right--para {
     font-size: 18px;
-    color: #e9ecef;
+    color: #7F7F7F;
     text-align: center;
     font-weight: 700;
     line-height: 30px;
@@ -842,3 +842,18 @@ button {
     text-align-last: center;
     line-height: 30px;
     margin-bottom: 3rem; }
+
+.start {
+  margin-bottom: 40px;
+  width: 17%;
+  font-size: 1rem;
+  color: #1078AD;
+  background-color: #96C5DC;
+  border: 2px solid;
+  background-color: rgba(147, 209, 240, 0.2);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease; }
+  .start:hover {
+    color: #1078AD;
+    background-color: transparent; }
