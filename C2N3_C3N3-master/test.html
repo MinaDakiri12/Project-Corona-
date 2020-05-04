@@ -38,7 +38,7 @@
             </ul>
         </nav>
         <div class="container">
-            <section class="progressbar">
+            <section class="stepper">
                 <h1 class="active">Informations</h1>
                 <h1>Questionnaire</h1>
                 <h1>Résultats</h1>
@@ -59,7 +59,29 @@
             </p>
         </section>
         <button class="start">Démarrer le test</button>
-
+        <section class="questionnaire">
+            <div class="progress">
+                <h3>
+                    <span class="number">1</span>
+                    /22</h3>
+                <div class="progress__bar">
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="question">
+                <h1 class="question__Question">Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs) ?</h1>
+                <div class="answer">
+                    <label for="tentacles"></label>
+                    <input type="number">
+                    <input type="radio">
+                    <label ></label>
+                </div>
+                <div class="btn">
+                    <button class="prédédent">Précédent</button>
+                    <button class="suivant ">Suivant</button>
+                </div>
+            </div>
+        </section>
         <script>
             $(function () {
                 $(".toggle").on("click", function () {
@@ -71,5 +93,6 @@
                 });
             });
         </script>
+        
     </body>
 </html>
