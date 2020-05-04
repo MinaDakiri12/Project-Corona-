@@ -104,12 +104,16 @@ h1{
 
 }
 .start{
+    margin-top: 24px;
     margin-bottom: 40px;
-    width: 17%;
-    font-size: 1rem;
+    margin-left: 38rem;
+    width: 18%;
+    font-size: 1.2rem;
+    font-weight: bold;
     color: $color-primary;
     background-color: $color-accent;
     border: 2px solid;
+    border-radius: 6px;
     background-color: rgba(147, 209, 240, 0.2);
     padding: 10px 20px;
     cursor: pointer;
@@ -120,4 +124,112 @@ h1{
         background-color: $color-primary;
         
     }
+}
+.questionnaire {
+    width: 80%;
+    border: 1px solid $color-gry;
+    margin: 20px auto;
+    border-radius: 8px;
+    
+    h1 {
+       text-align: center;
+       padding-top: 40px;
+       font-size: 31px;
+       line-height: 2.8rem;
+       color: $color-g;
+       font-weight: bolder;
+       width: 80%;
+       margin: 20px auto;
+}
+}
+.progress {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $color-gry;
+    padding: 7px 0;
+    background-color: rgba(0,0,0,.03);
+    
+
+    h3 {
+        font-weight: bolder;
+        margin-right: 10px;
+    }
+    &__bar {
+        width: 90%;
+        height: 10px;
+        border-radius: 20px;
+        background-color: $color-accent;
+
+        .bar {
+            height: 100%;
+            width: calc(1* calc(100% / 22));
+            background-color: $color-primary;
+            border-bottom-left-radius: 20px;
+            border-top-left-radius: 20px;
+            transition: all 0.4s ease;
+        }
+    }
+}
+.answer-inputs {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+    label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 70px 25px;
+        height: 85px;
+        width: 130px;
+        color: $color-primary;
+        border-radius: 5px;
+        border: 3px solid $color-primary;
+        font-size:  1.4rem;
+        font-weight: 900;
+        padding: 10px 0;
+        transition: 0.5s ease;
+
+       
+    }
+    input[type="radio"] {
+        display: none;
+
+    }
+    input[type="radio"]:checked+label {
+        background-color: $color-primary;
+        color: $color-secondary;
+    }
+}
+.btn{
+    margin: 40px 50px 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    .suivant {
+        grid-area: 1/3;
+        margin-left: 11.8rem;
+    }
+       
+   button{
+    width: 28%;
+    font-size: 16px;
+    
+    background-color: $color-primary;
+    background-color: rgba(16, 121, 173, 0.2);
+    padding: 10px 20px;
+    color: $color-accent;
+    border: 2px solid $color-accent;
+    border-radius: 4px;
+    transition: 0.3s ease;
+   }
+
 }
