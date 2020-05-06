@@ -2,7 +2,7 @@
 
 .container{
     width:70%;
-    margin: 60px 280px 20px;
+    margin: 60px auto 20px;
     
 }
 .stepper{
@@ -40,8 +40,8 @@ h1{
 .active{
     &::before {
         content: '';
-        height: 23px;
-        width: 23px;
+        height: 24px;
+        width: 24px;
         background-color: $color-secondary;
         border-radius: 100%;
         position: absolute;
@@ -106,8 +106,8 @@ h1{
 .start{
     margin-top: 24px;
     margin-bottom: 40px;
-    margin-left: 39%;
-    width: 18%;
+    margin-left: 42%;
+    width: 15%;
     font-size: 1.2rem;
     font-weight: bold;
     color: $color-primary;
@@ -264,15 +264,15 @@ h1{
         
         h1 {
             font-size: 16px;
-            margin-left: -30rem;
+            margin-left: -1rem;
             &::before {
-                height: 12px;
-                width: 12px;
+                height: 16px;
+                width: 16px;
                 margin-top: -20px;
             }
             &::after {
-                height: 12px;
-                width: 12px;
+                height:16px;
+                width: 16px;
                 margin-top: -20px;
             }
         }

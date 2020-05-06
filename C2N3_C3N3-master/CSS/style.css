@@ -770,7 +770,7 @@ a:hover {
 
 .container {
   width: 70%;
-  margin: 60px 280px 20px; }
+  margin: 60px auto 20px; }
 
 .stepper {
   display: grid;
@@ -801,8 +801,8 @@ a:hover {
       transition: all 0.3s ease; }
   .stepper .active::before {
     content: '';
-    height: 23px;
-    width: 23px;
+    height: 24px;
+    width: 24px;
     background-color: #F4CF1B;
     border-radius: 100%;
     position: absolute;
@@ -852,8 +852,8 @@ a:hover {
 .start {
   margin-top: 24px;
   margin-bottom: 40px;
-  margin-left: 39%;
-  width: 18%;
+  margin-left: 42%;
+  width: 15%;
   font-size: 1.2rem;
   font-weight: bold;
   color: #1078AD;
@@ -978,14 +978,14 @@ a:hover {
     width: 90%; }
   .stepper h1 {
     font-size: 16px;
-    margin-left: -30rem; }
+    margin-left: -1rem; }
     .stepper h1::before {
-      height: 12px;
-      width: 12px;
+      height: 16px;
+      width: 16px;
       margin-top: -20px; }
     .stepper h1::after {
-      height: 12px;
-      width: 12px;
+      height: 16px;
+      width: 16px;
       margin-top: -20px; }
   .stepper .active::before {
     height: 16px;
