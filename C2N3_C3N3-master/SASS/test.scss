@@ -126,6 +126,7 @@ h1{
     }
 }
 .questionnaire {
+    display: none;
     width: 80%;
     border: 1px solid $color-gry;
     margin: 20px auto;
@@ -208,6 +209,25 @@ h1{
         background-color: $color-primary;
         color: $color-secondary;
     }
+    input[type="number"] {
+        margin-top: 6rem;
+        margin-bottom: 6rem;
+        width: 100%;
+        font-size: 1rem;
+        border: 1px solid $color-accent;
+        padding: 10px ;   
+    }
+
+    .input-span {   
+        text-align: center;
+        font-size: 1rem;
+        border: 1px solid $color-accent;
+        background-color: $color-primary;
+        background-color: rgba(77, 163, 206, 0.1);
+        border-left: none;
+        padding: 4px;
+    }
+
 }
 .btn{
     margin: 40px 50px 20px;
