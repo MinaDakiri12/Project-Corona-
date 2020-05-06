@@ -4,8 +4,8 @@ const stepper = document.querySelectorAll('.stepper h1')
 const préambule = document.querySelector('.Préambule')
 const questionnaire = document.querySelector('.questionnaire')
 const testBtn = document.querySelector('.start')
-const prédédentBtn = document.querySelector('.prédédent')
-const suivantBtn =document.querySelector('.suivant')
+const precBtn = document.querySelector('.precedent')
+const suivBtn =document.querySelector('.suivant')
 const progressBar = document.querySelector('.bar')
 const questionNumber = document.querySelector('.number')
 const currentQuestion = document.querySelector('.question')
@@ -16,7 +16,23 @@ const box = document.querySelector('.box')
 
 //      Event Listener
 
+
+
+
 testBtn.addEventListener('click', start)
+
+let currentQuestionIndex = 0
+function  hidePrevious (){
+    if (currentQuestionIndex === 0) {
+        prectBtn
+            .classList
+            .add('hide')
+    } else {
+        prectBtn
+            .classList
+            .remove('hide')
+    }
+}
 
 function start() {
     stepper[0]
@@ -28,8 +44,12 @@ function start() {
     testBtn.style.display = 'none'
     préambule.style.display = 'none'
     questionnaire.style.display = 'block'
+    hidePrevious ()
     
 }
+
+
+
 
 
 
