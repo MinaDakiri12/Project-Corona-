@@ -106,7 +106,7 @@ h1{
 .start{
     margin-top: 24px;
     margin-bottom: 40px;
-    margin-left: 38rem;
+    margin-left: 39%;
     width: 18%;
     font-size: 1.2rem;
     font-weight: bold;
@@ -242,7 +242,6 @@ h1{
    button{
     width: 28%;
     font-size: 16px;
-    
     background-color: $color-primary;
     background-color: rgba(16, 121, 173, 0.2);
     padding: 10px 20px;
@@ -256,3 +255,91 @@ h1{
     pointer-events: none;}
 
 }
+
+@media only screen and (max-width: 575px) {
+    .container {
+        width: 90%;
+    }
+    .stepper {
+        
+        h1 {
+            font-size: 16px;
+            margin-left: -30rem;
+            &::before {
+                height: 12px;
+                width: 12px;
+                margin-top: -20px;
+            }
+            &::after {
+                height: 12px;
+                width: 12px;
+                margin-top: -20px;
+            }
+        }
+        .active {
+            &::before {
+                height: 16px;
+                width: 16px;
+                margin-top: -25px;
+            }
+            &::after {
+                height: 32px;
+                width: 32px;
+               margin-top: -33px;
+
+            }
+        }
+    }
+    .Préambule {
+        width: 80%;
+        text-align: center;
+        padding: 20px;
+
+        &__paragraph1, &__paragraph2 {
+            text-align: justify;
+            text-align-last: center;
+        }
+        hr {
+            width: 80%;
+            margin: 10px auto;
+        }
+    }
+    .start {
+        margin-top: 31px;
+        margin-left: 9rem;
+        width: 45%;
+    }
+    .questionnaire {
+        width: 88%;
+        h1 {
+            font-size: 18px;
+            line-height: 1.9rem;
+            
+        }
+    }
+    .progress {
+        margin: auto;
+        width: 100%;
+        h3{
+            display: inherit;
+        }
+    }
+    .btn {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        .suivant{
+            grid-area: 1/2;
+            margin-left: 2rem;
+        }
+        button {
+            width: 43%;
+            padding: 10px 14px;
+        }
+    }
+    .answer-inputs {
+        width: 80%;
+    }
+
+}
+
