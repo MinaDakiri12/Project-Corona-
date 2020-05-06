@@ -17,8 +17,6 @@ const box = document.querySelector('.box')
 //      Event Listener
 
 
-
-
 testBtn.addEventListener('click', start)
 
 function start() {
@@ -32,6 +30,9 @@ function start() {
     préambule.style.display = 'none'
     questionnaire.style.display = 'block'
     hidePrevious ()
+    show(questions[currentQuestionIndex])
+   
+    
     
 }
 
@@ -47,6 +48,76 @@ function  hidePrevious (){
             .remove('hide')
     }
 }
+
+
+
+function show (question) {
+
+    currentQuestion.innerText = question.question
+    answerInputs.innerHTML = ''
+    const inputAnswer = question.input.answer
+    const input = question.input
+
+    if (question.input.type === 'radio') {
+
+        inputAnswer.forEach(answer => {
+
+            answerInputs.innerHTML += `
+                    <div>
+                        <input type="radio" name="${input.Number}" id="${answer.text}">
+                        <label for="${answer.text}">
+                        <i class="fas ${answer.icon}"></i>
+                        <span>${answer.text}</span> </label>
+                    </div>`
+        })
+
+    } else {
+
+        answerInputs.innerHTML += `<input type="number" name="${input.Number}" id="${input.name}" min="${input.min}" max="${input.max}" placeholder="${input.min} - ${input.max}">
+                                    <span class="input-span">${input.name}</span>`
+    }
+
+}
+
+
+
+
+
+function folowProgress(number) {
+
+    const currentNmber = number + 1
+
+    questionNumber.innerText = currentNmber
+    progressBar.style.width = 'calc(${currentNmber} * calc(100% / 22))'
+
+}
+
+
+
+
+
+
+
+
+
+suiv.addEventListener('click', () => {
+    if (currentQuestionIndex < 21) {
+        currentQuestionIndex++
+        show(questions[currentQuestionIndex])
+        hidePrevious()
+        flowProgress(currentQuestionIndex)
+        
+         
+        suiv.disabled = true
+        if (currentQuestionIndex === 21) {
+            suiv.innerText = 'Terminer le test'       
+
+        } else {
+            suiv.innerText = 'Suivant'
+        }
+    }
+})
+
 
 
 
