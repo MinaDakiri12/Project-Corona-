@@ -869,6 +869,7 @@ a:hover {
     background-color: #1078AD; }
 
 .questionnaire {
+  display: none;
   width: 80%;
   border: 1px solid #e9ecef;
   margin: 20px auto;
@@ -934,6 +935,21 @@ a:hover {
   .answer-inputs input[type="radio"]:checked + label {
     background-color: #1078AD;
     color: #F4CF1B; }
+  .answer-inputs input[type="number"] {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid #96C5DC;
+    padding: 10px; }
+  .answer-inputs .input-span {
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid #96C5DC;
+    background-color: #1078AD;
+    background-color: rgba(77, 163, 206, 0.1);
+    border-left: none;
+    padding: 4px; }
 
 .btn {
   margin: 40px 50px 20px;

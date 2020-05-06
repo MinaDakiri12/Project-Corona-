@@ -7,6 +7,7 @@
         <link rel="icon" href="/Design/Assets/png/logo__sante.png">
         <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
         <link rel="stylesheet" href="css/style.css">
+        <link  href='https://kit-free.fontawesome.com/releases/latest/css/free.min.css%22%3E' rel="stylesheet"> 
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -71,7 +72,9 @@
             <div class="box">
                 <h1 class="question">Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs) ?</h1>
                 <div class="answer-inputs">
-                    <div>
+                    <input type="number"  id="degrés" min="34" max="42" placeholder="34 - 42">
+                    <span class="input-span">degrés</span>
+                   <!--<div>
                         <input type="radio" name="choice " id="oui">
                         <label for="oui">
                             <i class="fas fa-check"></i>
@@ -83,7 +86,7 @@
                             <i class="fas fa-times"></i>
                             <span>Non</span>
                         </label>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="btn">
                     <button class="prédédent">Précédent</button>
