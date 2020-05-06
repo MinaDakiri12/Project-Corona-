@@ -852,7 +852,7 @@ a:hover {
 .start {
   margin-top: 24px;
   margin-bottom: 40px;
-  margin-left: 38rem;
+  margin-left: 39%;
   width: 18%;
   font-size: 1.2rem;
   font-weight: bold;
@@ -972,3 +972,61 @@ a:hover {
   .btn .hide {
     opacity: 0;
     pointer-events: none; }
+
+@media only screen and (max-width: 575px) {
+  .container {
+    width: 90%; }
+  .stepper h1 {
+    font-size: 16px;
+    margin-left: -30rem; }
+    .stepper h1::before {
+      height: 12px;
+      width: 12px;
+      margin-top: -20px; }
+    .stepper h1::after {
+      height: 12px;
+      width: 12px;
+      margin-top: -20px; }
+  .stepper .active::before {
+    height: 16px;
+    width: 16px;
+    margin-top: -25px; }
+  .stepper .active::after {
+    height: 32px;
+    width: 32px;
+    margin-top: -33px; }
+  .Préambule {
+    width: 80%;
+    text-align: center;
+    padding: 20px; }
+    .Préambule__paragraph1, .Préambule__paragraph2 {
+      text-align: justify;
+      text-align-last: center; }
+    .Préambule hr {
+      width: 80%;
+      margin: 10px auto; }
+  .start {
+    margin-top: 31px;
+    margin-left: 9rem;
+    width: 45%; }
+  .questionnaire {
+    width: 88%; }
+    .questionnaire h1 {
+      font-size: 18px;
+      line-height: 1.9rem; }
+  .progress {
+    margin: auto;
+    width: 100%; }
+    .progress h3 {
+      display: inherit; }
+  .btn {
+    display: grid;
+    grid-template-columns: 50% 50%; }
+    .btn .suivant {
+      grid-area: 1/2;
+      margin-left: 2rem; }
+    .btn button {
+      width: 43%;
+      padding: 10px 14px; }
+  .answer-inputs {
+    width: 80%; } }
