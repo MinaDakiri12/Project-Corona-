@@ -6,7 +6,7 @@ const Préambule = document.querySelector('.Préambule')
 const stepper = document.querySelectorAll('.stepper h1')
 const nextBtn = document.querySelector('.next')
 const previousBtn = document.querySelector('.previous')
-const currentquestion = document.querySelector('.question')
+const currentQuestion = document.querySelector('.question')
 const answerInputs = document.querySelector('.answer-inputs')
 const progressBar = document.querySelector('.bar')
 const questionNumber = document.querySelector('.question-number')
@@ -28,10 +28,10 @@ animateBox.addEventListener('change', (e) => {
 
         if (number >= input.min && number <= input.max) {
 
-            answers[input.name] = input
+             answerInputs[input.name] = input
                 .value
                 console
-                .log(answers);
+                .log( answerInputs);
 
             nextBtn.disabled = false
         } else {
@@ -41,20 +41,63 @@ animateBox.addEventListener('change', (e) => {
 
     } else {
 
-        answers[input.name] = input
+        answerInputs[input.name] = input
             .id
             console
-            .log(answers);
+            .log( answerInputs);
         nextBtn.disabled = false
     }
 
 })
 
-// ! :::::::::::::::::::     fuction
+
+nextBtn.addEventListener('click', () => {
+    if (currentQuestionIndex < 21) {
+        currentQuestionIndex++
+        showQuestion(questions[currentQuestionIndex])
+        folowProgress(currentQuestionIndex)
+        previous()
+        
+        nextBtn.disabled = true
+        if (currentQuestionIndex === 21) {
+            nextBtn.innerText = 'Terminer le test'
+            nextBtn
+                .classList
+                .add('result')
+            const resultBtn = document.querySelector('.result')
+            resultBtn.addEventListener('click', Results)
+
+        } else {
+            nextBtn.innerText = 'Suivant'
+        }
+    }
+})
+
+
+
+previousBtn.addEventListener('click', () => {
+    currentQuestionIndex--
+    showQuestion(questions[currentQuestionIndex])
+    folowProgress(currentQuestionIndex)
+    previous()
+    
+    nextBtn.disabled = true
+    if (currentQuestionIndex === 21) {
+        nextBtn.innerText = 'Terminer le test'
+
+    } else {
+        nextBtn.innerText = 'Suivant'
+        nextBtn
+            .classList
+            .remove('result')
+    }
+})
+
+//  function
 
 let currentQuestionIndex = 0
 
-function hideprevious() {
+function previous() {
 
     if (currentQuestionIndex === 0) {
         previousBtn
@@ -77,55 +120,16 @@ function startTest() {
     testBtn.style.display = 'none'
     Préambule.style.display = 'none'
     questionnaire.style.display = 'block'
-    hideprevious()
+    previous()
     nextBtn.disabled = true
     showQuestion(questions[currentQuestionIndex])
 
 }
 
-nextBtn.addEventListener('click', () => {
-    if (currentQuestionIndex < 21) {
-        currentQuestionIndex++
-        showQuestion(questions[currentQuestionIndex])
-        folowProgress(currentQuestionIndex)
-        hideprevious()
-        transition('next')
-        nextBtn.disabled = true
-        if (currentQuestionIndex === 21) {
-            nextBtn.innerText = 'Terminer le test'
-            nextBtn
-                .classList
-                .add('result')
-            const resultBtn = document.querySelector('.result')
-            resultBtn.addEventListener('click', Results)
-
-        } else {
-            nextBtn.innerText = 'Suivant'
-        }
-    }
-})
-
-previousBtn.addEventListener('click', () => {
-    currentQuestionIndex--
-    showQuestion(questions[currentQuestionIndex])
-    folowProgress(currentQuestionIndex)
-    hideprevious()
-    transition('previous')
-    nextBtn.disabled = true
-    if (currentQuestionIndex === 21) {
-        nextBtn.innerText = 'Terminer le test'
-
-    } else {
-        nextBtn.innerText = 'Suivant'
-        nextBtn
-            .classList
-            .remove('result')
-    }
-})
 
 function showQuestion(question) {
 
-    currentquestion.innerText = question.question
+    currentQuestion.innerText = question.question
     answerInputs.innerHTML = ''
     const inputAnswer = question.input.answer
     const input = question.input
@@ -136,7 +140,7 @@ function showQuestion(question) {
 
             answerInputs.innerHTML += `
                     <div>
-                        <input type="radio" name="${input.qNumber}" id="${answer.text}">
+                        <input type="radio" name="${input.Number}" id="${answer.text}">
                         <label for="${answer.text}">
                         <i class="fas ${answer.icon}"></i>
                         <span>${answer.text}</span> </label>
@@ -145,7 +149,7 @@ function showQuestion(question) {
 
     } else {
 
-        answerInputs.innerHTML += `<input type="number" name="${input.qNumber}" id="${input.name}" min="${input.min}" max="${input.max}" placeholder="${input.min} - ${input.max}">
+        answerInputs.innerHTML += `<input type="number" name="${input.Number}" id="${input.name}" min="${input.min}" max="${input.max}" placeholder="${input.min} - ${input.max}">
                                     <span class="input-span">${input.name}</span>`
     }
 
@@ -160,13 +164,7 @@ function folowProgress(number) {
 
 }
 
-function transition(frame) {
 
-    animateBox.style.animation = ` ${frame} .5s ease`
-    animateBox.addEventListener('animationend', () => {
-        animateBox.style.animation = ``
-    })
-}
 
 
 
