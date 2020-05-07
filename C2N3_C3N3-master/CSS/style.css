@@ -979,24 +979,6 @@ a:hover {
     opacity: 0;
     pointer-events: none; }
 
-@keyframes next {
-  0% {
-    opacity: 0;
-    transform: translateX(90%); }
-  15% {
-    opacity: 1; }
-  100% {
-    transform: translateX(0); } }
-
-@keyframes previous {
-  0% {
-    opacity: 0;
-    transform: translateX(-90%); }
-  15% {
-    opacity: 1; }
-  100% {
-    transform: translateX(0); } }
-
 @media only screen and (max-width: 575px) {
   .wrapper {
     width: 90%; }
