@@ -19,6 +19,18 @@ const box = document.querySelector('.box')
 
 testBtn.addEventListener('click', start)
 
+
+
+
+
+
+
+
+
+
+
+
+
 function start() {
     stepper[0]
         .classList
@@ -88,12 +100,6 @@ function folowProgress(number) {
     progressBar.style.width = `calc(${currentNmber} * calc(100% / 22))`
 
 }
-
-
-
-
-
-
 
 
 
