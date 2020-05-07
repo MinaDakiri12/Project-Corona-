@@ -80,15 +80,12 @@ function show (question) {
 }
 
 
-
-
-
 function folowProgress(number) {
 
     const currentNmber = number + 1
 
     questionNumber.innerText = currentNmber
-    progressBar.style.width = 'calc(${currentNmber} * calc(100% / 22))'
+    progressBar.style.width = `calc(${currentNmber} * calc(100% / 22))`
 
 }
 
@@ -105,7 +102,7 @@ suiv.addEventListener('click', () => {
         currentQuestionIndex++
         show(questions[currentQuestionIndex])
         hidePrevious()
-        flowProgress(currentQuestionIndex)
+        folowProgress(currentQuestionIndex)
         
          
         suiv.disabled = true
