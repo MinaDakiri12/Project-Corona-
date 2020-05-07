@@ -1,0 +1,384 @@
+.wrapper {
+    width: 70%;
+    margin: 80px auto 20px;
+}
+.stepper {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    h1 {
+        font-size: 20px;
+        color: $color-primary;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        &::before {
+            content: '';
+            height: 16px;
+            width: 16px;
+            background-color: $color-primary;
+            border-radius: 100%;
+            position: absolute;
+            top: -25px;
+        }
+
+        &::after {
+            content: '';
+            height: 16px;
+            width: 16px;
+            background-color: $color-accent;
+            border-radius: 100%;
+            position: absolute;
+            top: -25px;
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .select {
+        &::before {
+            content: '';
+            height: 22px;
+            width: 22px;
+            background-color: $color-secondary;
+            border-radius: 100%;
+            position: absolute;
+            top: -30px;
+            z-index: 100;
+        }
+
+        &::after {
+            content: '';
+            height: 48px;
+            width: 48px;
+            background-color: $color-accent;
+            border-radius: 100%;
+            position: absolute;
+            top: -43px;
+            z-index: 1;
+        }
+    }
+}
+
+.Préambule {
+    width: 80%;
+    text-align: center;
+    background-color: $color-gry;
+    margin: 0 auto;
+    padding: 20px 40px;
+    border-radius:  1rem;
+
+    &__paragraph1{
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-align: justify;
+        text-align-last: center;
+        line-height: 30px;
+        margin-bottom: 3rem;
+    }
+    &__paragraph2 {
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-align: justify;
+        text-align-last: center;
+        line-height: 30px;
+        margin-bottom: 3rem;
+    }
+
+    h1 {
+        font-size: 25px;
+        font-weight: 900;
+        margin-bottom: 30px;
+        text-align: center;
+         color: $color-primary;
+    }
+
+    hr {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        border: .1px solid $color-g;
+    }
+
+}
+
+.start-btn {
+    margin-top: 24px;
+    margin-bottom: 40px;
+    margin-left: 42%;
+    width: 15%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $color-primary;
+    background-color: $color-accent;
+    border: 2px solid;
+    border-radius: 6px;
+    background-color: rgba(147, 209, 240, 0.2);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $color-primary;
+        background-color: transparent;
+    }
+}
+
+.questionnaire {
+    width: 64%;
+    border: 1px solid;
+    margin: 20px auto;
+    border-radius: 8px;
+    display: none;
+
+    h1 {
+        text-align: center;
+        font-size: 24px;
+        line-height: 1.8rem;
+        color: $color-g;
+        font-weight: 600;
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .progress {
+        margin: auto;
+        width: 99%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid $color-gry;
+        padding: 7px 0;
+        background-color: $color-gry;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+
+        h3 {
+            font-weight: bolder;
+            margin-right: 10px;
+        }
+
+        &__bar {
+            width: 90%;
+            height: 10px;
+            border-radius: 20px;
+            background-color: $color-accent;
+
+            .bar {
+                height: 100%;
+                width: calc(1* calc(100% / 22));
+                background-color: $color-primary;
+                border-bottom-left-radius: 20px;
+                border-top-left-radius: 20px;
+                transition: all 0.4s ease;
+            }
+        }
+    }
+
+}
+
+.answer-inputs {
+    width: 30%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input[type="number"] {
+        font-size: 16px;
+        border: 2px solid $color-primary;
+        padding: 10px;
+        font-weight: 600;
+        width: 55%;
+    }
+
+    .input-span {
+        width: 50%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        border: 2px solid $color-primary;
+        border-left: none;
+        background-color: $color-accent;
+        padding: 10px;
+    }
+
+    input[type="radio"] {
+        -webkit-appearance: none;
+
+    }
+
+    input[type="radio"]:checked+label {
+        background-color: $color-primary;
+        color: $color-secondary;
+    }
+
+    label {
+        margin: 0 10px;
+        height: 72px;
+        width: 88px;
+        color: $color-primary;
+        border-radius: 4px;
+        border: 4px solid $color-primary;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        transition: 0.5s ease;
+
+        span {
+            font-size: 16px;
+            font-weight: 900;
+        }
+    }
+}
+
+.btn-container {
+    margin: 40px auto 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    .next {
+        grid-area: 1/3;
+    }
+    button {
+        width: 50%;
+        font-size: 16px;
+        background-color: $color-accent;
+        padding: 10px 20px;
+        color: $color-accent;
+        border: 1px solid $color-primary;
+        border-radius: 4px;
+        transition: 0.3s ease;
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-gry;
+        }
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.65;
+
+            &:hover {
+                background-color: $color-accent !important;
+                color: $color-primary !important;
+            }
+        }
+    }
+    .hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+    @keyframes next {
+        0% {
+            opacity: 0;
+            transform: translateX(90%);
+        }
+
+        15% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes previous {
+        0% {
+            opacity: 0;
+            transform: translateX(-90%);
+        }
+
+        15% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .wrapper {
+        width: 90%;
+    }
+    .stepper {
+        h1 {
+            font-size: 16px;
+            &::before {
+                height: 12px;
+                width: 12px;
+                top: -20px;
+            }
+            &::after {
+                height: 12px;
+                width: 12px;
+                top: -20px;
+            }
+        }
+        .select {
+            &::before {
+                height: 16px;
+                width: 16px;
+                top: -25px;
+            }
+            &::after {
+                height: 32px;
+                width: 32px;
+                top: -33px;
+
+            }
+        }
+    }
+    .Préambule {
+        width: 80%;
+        text-align: center;
+        padding: 20px;
+        &--para1,
+        &--para2 {
+            text-align: justify;
+            text-align-last: center;
+        }
+        hr {
+            width: 80%;
+            margin: 10px auto;
+        }
+
+    }
+    .start-btn {
+        width: 50%;
+    }
+    .questionnaire {
+        width: 88%;
+        h1 {
+            font-size: 18px;
+            line-height: 1.4rem;
+            margin: 10px auto;
+        }
+    }
+    .progress {
+        margin: auto;
+        width: 100%;
+        h3{
+            display: inherit;
+        }
+    }
+    .btn-container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        .next {
+            grid-area: 1/2;
+        }
+        button {
+            width: 90%;
+            padding: 10px 14px;
+        }
+    }
+    .answer-inputs {
+        width: 80%;
+    }
+
+}

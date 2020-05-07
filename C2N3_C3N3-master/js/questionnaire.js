@@ -1,71 +1,131 @@
 // DOM
 
-const stepper = document.querySelectorAll('.stepper h1')
-const préambule = document.querySelector('.Préambule')
+const testBtn = document.querySelector('.start-btn')
 const questionnaire = document.querySelector('.questionnaire')
-const testBtn = document.querySelector('.start')
-const prec = document.querySelector('.precedent')
-const suiv =document.querySelector('.suivant')
-const progressBar = document.querySelector('.bar')
-const questionNumber = document.querySelector('.number')
-const currentQuestion = document.querySelector('.question')
+const Préambule = document.querySelector('.Préambule')
+const stepper = document.querySelectorAll('.stepper h1')
+const nextBtn = document.querySelector('.next')
+const previousBtn = document.querySelector('.previous')
+const currentquestion = document.querySelector('.question')
 const answerInputs = document.querySelector('.answer-inputs')
-const box = document.querySelector('.box')
-
+const progressBar = document.querySelector('.bar')
+const questionNumber = document.querySelector('.question-number')
+const animateBox = document.querySelector('.animation')
 
 
 //      Event Listener
 
 
-testBtn.addEventListener('click', start)
+testBtn.addEventListener('click', startTest)
 
+animateBox.addEventListener('change', (e) => {
 
+    const input = e.target
 
+    if (input.type === 'number') {
 
+        const number = parseFloat(input.value)
 
+        if (number >= input.min && number <= input.max) {
 
+            answers[input.name] = input
+                .value
+                console
+                .log(answers);
 
+            nextBtn.disabled = false
+        } else {
+            nextBtn.disabled = true
 
+        }
 
+    } else {
 
+        answers[input.name] = input
+            .id
+            console
+            .log(answers);
+        nextBtn.disabled = false
+    }
 
+})
 
-
-function start() {
-    stepper[0]
-        .classList
-        .remove('active')
-    stepper[1]
-        .classList
-        .add('active')
-    testBtn.style.display = 'none'
-    préambule.style.display = 'none'
-    questionnaire.style.display = 'block'
-    hidePrevious ()
-    show(questions[currentQuestionIndex])
-   
-    
-    
-}
+// ! :::::::::::::::::::     fuction
 
 let currentQuestionIndex = 0
-function  hidePrevious (){
+
+function hideprevious() {
+
     if (currentQuestionIndex === 0) {
-        prec
+        previousBtn
             .classList
             .add('hide')
     } else {
-        prec
+        previousBtn
             .classList
             .remove('hide')
     }
 }
 
+function startTest() {
+    stepper[0]
+        .classList
+        .remove('select')
+    stepper[1]
+        .classList
+        .add('select')
+    testBtn.style.display = 'none'
+    Préambule.style.display = 'none'
+    questionnaire.style.display = 'block'
+    hideprevious()
+    nextBtn.disabled = true
+    showQuestion(questions[currentQuestionIndex])
 
+}
 
-function show (question) {
+nextBtn.addEventListener('click', () => {
+    if (currentQuestionIndex < 21) {
+        currentQuestionIndex++
+        showQuestion(questions[currentQuestionIndex])
+        folowProgress(currentQuestionIndex)
+        hideprevious()
+        transition('next')
+        nextBtn.disabled = true
+        if (currentQuestionIndex === 21) {
+            nextBtn.innerText = 'Terminer le test'
+            nextBtn
+                .classList
+                .add('result')
+            const resultBtn = document.querySelector('.result')
+            resultBtn.addEventListener('click', Results)
 
-    currentQuestion.innerText = question.question
+        } else {
+            nextBtn.innerText = 'Suivant'
+        }
+    }
+})
+
+previousBtn.addEventListener('click', () => {
+    currentQuestionIndex--
+    showQuestion(questions[currentQuestionIndex])
+    folowProgress(currentQuestionIndex)
+    hideprevious()
+    transition('previous')
+    nextBtn.disabled = true
+    if (currentQuestionIndex === 21) {
+        nextBtn.innerText = 'Terminer le test'
+
+    } else {
+        nextBtn.innerText = 'Suivant'
+        nextBtn
+            .classList
+            .remove('result')
+    }
+})
+
+function showQuestion(question) {
+
+    currentquestion.innerText = question.question
     answerInputs.innerHTML = ''
     const inputAnswer = question.input.answer
     const input = question.input
@@ -76,7 +136,7 @@ function show (question) {
 
             answerInputs.innerHTML += `
                     <div>
-                        <input type="radio" name="${input.Number}" id="${answer.text}">
+                        <input type="radio" name="${input.qNumber}" id="${answer.text}">
                         <label for="${answer.text}">
                         <i class="fas ${answer.icon}"></i>
                         <span>${answer.text}</span> </label>
@@ -85,12 +145,11 @@ function show (question) {
 
     } else {
 
-        answerInputs.innerHTML += `<input type="number" name="${input.Number}" id="${input.name}" min="${input.min}" max="${input.max}" placeholder="${input.min} - ${input.max}">
+        answerInputs.innerHTML += `<input type="number" name="${input.qNumber}" id="${input.name}" min="${input.min}" max="${input.max}" placeholder="${input.min} - ${input.max}">
                                     <span class="input-span">${input.name}</span>`
     }
 
 }
-
 
 function folowProgress(number) {
 
@@ -101,25 +160,13 @@ function folowProgress(number) {
 
 }
 
+function transition(frame) {
 
-
-suiv.addEventListener('click', () => {
-    if (currentQuestionIndex < 21) {
-        currentQuestionIndex++
-        show(questions[currentQuestionIndex])
-        hidePrevious()
-        folowProgress(currentQuestionIndex)
-        
-         
-        suiv.disabled = true
-        if (currentQuestionIndex === 21) {
-            suiv.innerText = 'Terminer le test'       
-
-        } else {
-            suiv.innerText = 'Suivant'
-        }
-    }
-})
+    animateBox.style.animation = ` ${frame} .5s ease`
+    animateBox.addEventListener('animationend', () => {
+        animateBox.style.animation = ``
+    })
+}
 
 
 
