@@ -980,6 +980,7 @@ a:hover {
     pointer-events: none; }
 
 .Résultats {
+  display: none;
   width: 80%;
   background-color: #e9ecef;
   margin: 0 auto;
