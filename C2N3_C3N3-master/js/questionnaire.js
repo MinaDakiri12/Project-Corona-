@@ -520,6 +520,22 @@ const questions = [
         }
     },
     {
+        question: 'Avez-vous une insuffisance rénale chronique dialysée ?',
+        input: {
+            type: 'radio',
+            Number: 'Q18',
+            answer: [
+                {
+                    text: 'Oui',
+                    icon: 'fa-check'
+                }, {
+                    text: 'Non',
+                    icon: 'fa-times'
+                }
+            ]
+        }
+    },
+    {
         question: 'Avez-vous une maladie chronique du foie ?',
         input: {
             type: 'radio',
