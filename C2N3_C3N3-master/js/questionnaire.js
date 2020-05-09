@@ -11,7 +11,7 @@ const answerInputs = document.querySelector('.answer-inputs')
 const progressBar = document.querySelector('.bar')
 const questionNumber = document.querySelector('.question-number')
 const animateBox = document.querySelector('.animation')
-const Resultat = document.querySelector('.Résultats p')
+const Resultat = document.querySelectorAll('.Résultats p')
 
 
 //      Event Listener
@@ -126,7 +126,6 @@ function startTest() {
         .add('select')
     testBtn.style.display = 'none'
     Préambule.style.display = 'none'
-    Resultat.style.display = 'none'
     questionnaire.style.display = 'block'
     previous()
     nextBtn.disabled = true
@@ -186,13 +185,27 @@ function showResult (){
   questionnaire.style.display = 'none'
   testBtn.textContent = ' Recommencer le test'
 
+
 }
+
+//Algorithme
+
+let answers = {}
 
 function Results() {
-
-    showResult()
     
-}
+    // Tout patient avec aucun symptôme :
+   if ((answers['Q1'] === 'Non') && (answer['Q3'] === 'Non') && (answer['Q4'] === 'Non') && (answer['Q5'] === 'Non') && (answer['Q6'] === 'Non')){
+
+    Resultat[0].innerText = 'Votre situation ne relève probablement pas du Covid-19.N’hésitez pas à contacter votre médecin en cas de doute.Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation.Pour toute information concernant le Covid-19 allez vers la page d’accueil.'
+    Resultat[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.'
+   }
+   showResult()
+}  
+
+
+
+
 
 
 
