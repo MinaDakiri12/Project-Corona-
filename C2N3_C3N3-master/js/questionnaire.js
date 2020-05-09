@@ -11,7 +11,7 @@ const answerInputs = document.querySelector('.answer-inputs')
 const progressBar = document.querySelector('.bar')
 const questionNumber = document.querySelector('.question-number')
 const animateBox = document.querySelector('.animation')
-const result = document.querySelector('.Résultats')
+const Resultat = document.querySelector('.Résultats p')
 
 
 //      Event Listener
@@ -62,6 +62,12 @@ nextBtn.addEventListener('click', () => {
         nextBtn.disabled = true
         if (currentQuestionIndex === 21) {
             nextBtn.innerText = 'Terminer le test'
+
+            nextBtn
+            .classList
+            .add('result')
+           const resultBtn = document.querySelector('.result')
+          resultBtn.addEventListener('click', Results)
           
         } else {
             nextBtn.innerText = 'Suivant'
@@ -83,9 +89,12 @@ previousBtn.addEventListener('click', () => {
 
     } else {
         nextBtn.innerText = 'Suivant'
+        nextBtn.innerText = 'Terminer le test'
+       
+
         nextBtn
             .classList
-            .remove('result')
+            .remove('results')
     }
 })
 
@@ -110,11 +119,14 @@ function startTest() {
     stepper[0]
         .classList
         .remove('select')
+        
+        
     stepper[1]
         .classList
         .add('select')
     testBtn.style.display = 'none'
     Préambule.style.display = 'none'
+    Resultat.style.display = 'none'
     questionnaire.style.display = 'block'
     previous()
     nextBtn.disabled = true
@@ -158,6 +170,28 @@ function folowProgress(number) {
     questionNumber.innerText = currentNmber
     progressBar.style.width = `calc(${currentNmber} * calc(100% / 22))`
 
+}
+
+function showResult (){
+
+    stepper[1]
+    .classList
+    .remove('select')
+   stepper[2]
+    .classList
+    .add('select')
+  testBtn.style.display = 'block'
+  Préambule.style.display = 'none'
+  Resultat.style.display = 'block'
+  questionnaire.style.display = 'none'
+  testBtn.textContent = ' Recommencer le test'
+
+}
+
+function Results() {
+
+    showResult()
+    
 }
 
 
