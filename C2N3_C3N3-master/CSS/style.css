@@ -990,7 +990,8 @@ a:hover {
     text-align: justify;
     text-align-last: center;
     line-height: 30px;
-    margin-bottom: 3rem; }
+    margin-bottom: 3rem;
+    color: #026534; }
   .Résultats__paragraph2 {
     font-size: 20px;
     text-align: justify;
