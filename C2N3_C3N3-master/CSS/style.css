@@ -969,15 +969,42 @@ a:hover {
     border: 2px solid #96C5DC;
     border-radius: 4px;
     transition: 0.3s ease; }
+    .btn-container button:hover {
+      background-color: #1078AD;
+      color: #FFFFFF; }
     .btn-container button:disabled {
       cursor: not-allowed;
       opacity: 0.65; }
-      .btn-container button:disabled:hover {
-        background-color: #96C5DC !important;
-        color: #1078AD !important; }
   .btn-container .hide {
     opacity: 0;
     pointer-events: none; }
+
+.Résultats {
+  width: 80%;
+  background-color: #e9ecef;
+  margin: 0 auto;
+  padding: 20px 40px;
+  border-radius: 1rem; }
+  .Résultats__paragraph1 {
+    font-size: 25px;
+    text-align: justify;
+    text-align-last: center;
+    line-height: 30px;
+    margin-bottom: 3rem; }
+  .Résultats__paragraph2 {
+    margin-top: 22px;
+    font-size: 20px;
+    text-align: justify;
+    text-align-last: center;
+    line-height: 30px;
+    margin-bottom: 3rem;
+    color: #1078AD; }
+  .Résultats h1 {
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #1078AD; }
 
 @media only screen and (max-width: 575px) {
   .wrapper {

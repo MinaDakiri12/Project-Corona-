@@ -61,12 +61,7 @@ nextBtn.addEventListener('click', () => {
         nextBtn.disabled = true
         if (currentQuestionIndex === 21) {
             nextBtn.innerText = 'Terminer le test'
-            nextBtn
-                .classList
-                .add('result')
-            const resultBtn = document.querySelector('.result')
-            resultBtn.addEventListener('click', Results)
-
+          
         } else {
             nextBtn.innerText = 'Suivant'
         }
