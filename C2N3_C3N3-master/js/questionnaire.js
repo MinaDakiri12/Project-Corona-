@@ -11,6 +11,7 @@ const answerInputs = document.querySelector('.answer-inputs')
 const progressBar = document.querySelector('.bar')
 const questionNumber = document.querySelector('.question-number')
 const animateBox = document.querySelector('.animation')
+const result = document.querySelector('.Résultats p')
 
 
 //      Event Listener
