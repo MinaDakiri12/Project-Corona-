@@ -6,12 +6,13 @@ const Préambule = document.querySelector('.Préambule')
 const stepper = document.querySelectorAll('.stepper h1')
 const nextBtn = document.querySelector('.next')
 const previousBtn = document.querySelector('.previous')
-const currentQuestion = document.querySelector('.question')
+const currentquestion = document.querySelector('.question')
 const answerInputs = document.querySelector('.answer-inputs')
 const progressBar = document.querySelector('.bar')
 const questionNumber = document.querySelector('.question-number')
 const animateBox = document.querySelector('.animation')
-const Resultat = document.querySelectorAll('.Résultats p')
+const Resultat = document.querySelector('.Résultats')
+const resultMessage = document.querySelectorAll('.Résultats p')
 
 
 //      Event Listener
@@ -29,10 +30,10 @@ animateBox.addEventListener('change', (e) => {
 
         if (number >= input.min && number <= input.max) {
 
-             answerInputs[input.name] = input
+            answers[input.name] = input
                 .value
                 console
-                .log( answerInputs);
+                .log(answers);
 
             nextBtn.disabled = false
         } else {
@@ -42,10 +43,10 @@ animateBox.addEventListener('change', (e) => {
 
     } else {
 
-        answerInputs[input.name] = input
+        answers[input.name] = input
             .id
             console
-            .log( answerInputs);
+            .log(answers);
         nextBtn.disabled = false
     }
 
@@ -136,7 +137,7 @@ function startTest() {
 
 function showQuestion(question) {
 
-    currentQuestion.innerText = question.question
+    currentquestion.innerText = question.question
     answerInputs.innerHTML = ''
     const inputAnswer = question.input.answer
     const input = question.input
@@ -147,7 +148,7 @@ function showQuestion(question) {
 
             answerInputs.innerHTML += `
                     <div>
-                        <input type="radio" name="${input.Number}" id="${answer.text}">
+                        <input type="radio" name="${input.qNumber}" id="${answer.text}">
                         <label for="${answer.text}">
                         <i class="fas ${answer.icon}"></i>
                         <span>${answer.text}</span> </label>
@@ -156,7 +157,7 @@ function showQuestion(question) {
 
     } else {
 
-        answerInputs.innerHTML += `<input type="number" name="${input.Number}" id="${input.name}" min="${input.min}" max="${input.max}" placeholder="${input.min} - ${input.max}">
+        answerInputs.innerHTML += `<input type="number" name="${input.qNumber}" id="${input.name}" min="${input.min}" max="${input.max}" placeholder="${input.min} - ${input.max}">
                                     <span class="input-span">${input.name}</span>`
     }
 
@@ -184,8 +185,9 @@ function showResult (){
   Resultat.style.display = 'block'
   questionnaire.style.display = 'none'
   testBtn.textContent = ' Recommencer le test'
-
-
+  testBtn.addEventListener('click', () => {
+    window.location.reload()
+})
 }
 
 //Algorithme
@@ -193,12 +195,33 @@ function showResult (){
 let answers = {}
 
 function Results() {
-    
-    // Tout patient avec aucun symptôme :
-   if ((answers['Q1'] === 'Non') && (answer['Q3'] === 'Non') && (answer['Q4'] === 'Non') && (answer['Q5'] === 'Non') && (answer['Q6'] === 'Non')){
 
-    Resultat[0].innerText = 'Votre situation ne relève probablement pas du Covid-19.N’hésitez pas à contacter votre médecin en cas de doute.Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation.Pour toute information concernant le Covid-19 allez vers la page d’accueil.'
-    Resultat[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.'
+   // Tout patient avec un  symptôme au minimum :
+   if ((answers['Q1'] === 'Oui') || (answers['Q3'] === 'Oui') || (answers['Q4'] === 'Oui') || (answers['Q5'] === 'Oui') || (answers['Q6'] === 'Oui')){
+
+    
+    resultMessage[0].innerText = "Vous pouvez faire une téléconsultation ou médecin généraliste ou visite à domicile. Appelez le 141 si une gêne respiratoire ou des difficultés importantes p" +
+    "our s’alimenter ou boire pendant plus de 24h apparaissent."
+    resultMessage[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.'
+   }
+
+// Tout patient avec deux symptôme au minimum :
+
+   else if  ((answers['Q7'] === 'Oui') && (answers['Q8'] === 'Oui') && (answers['Q9'] === 'Oui')){
+
+    resultMessage[0].innerText = "Appelez le 141"
+    resultMessage[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.'
+    resultMessage[0].style.color = '#FF0000'
+    resultMessage[0].style.fontSize = '48px'
+    resultMessage[0].style.fontWeight = 'bold'
+
+   }
+
+   // Tout patient sans aucun des conditons précédents :
+   else{
+    resultMessage[0].innerText = 'Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute.Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation.'+'Pour toute information concernant le Covid-19 allez vers la page d’accueil.'
+    resultMessage[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.'
+
    }
    showResult()
 }  
@@ -303,21 +326,13 @@ function Results() {
 
 
 
-
-
-
-
-
-
-
-
-
 const questions = [
     {
         question: 'Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs) ?',
+
         input: {
             type: 'radio',
-            Number: 'Q1',
+            qNumber: 'Q1',
             answer: [
                 {
                     text: 'Oui',
@@ -328,22 +343,22 @@ const questions = [
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Quelle est votre température corporelle ?',
+
         input: {
             type: 'number',
-            Number: 'Q2',
+            qNumber: 'Q2',
             name: 'degrés',
             min: 34,
             max: 42
         }
-    },
-    {
+    }, {
         question: 'Ces derniers jours, avez-vous une toux ou une augmentation de votre toux habituelle ?',
+
         input: {
             type: 'radio',
-            Number: 'Q3',
+            qNumber: 'Q3',
             answer: [
                 {
                     text: 'Oui',
@@ -354,12 +369,12 @@ const questions = [
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Avez-vous eu des courbatures inhabituelles au cours des derniers jours ?',
+
         input: {
             type: 'radio',
-            Number: 'Q4',
+            qNumber: 'Q4',
             answer: [
                 {
                     text: 'Oui',
@@ -370,12 +385,12 @@ const questions = [
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Ces derniers jours, avez-vous un mal de gorge ?',
+
         input: {
             type: 'radio',
-            Number: 'Q5',
+            qNumber: 'Q5',
             answer: [
                 {
                     text: 'Oui',
@@ -386,12 +401,13 @@ const questions = [
                 }
             ]
         }
-    },
-    {
-        question: 'Ces dernières 24 heures, avez-vous de la diarrhée ? Avec au moins 3 selles molles.',
+    }, {
+        question: 'Ces dernières 24 heures, avez-vous de la diarrhée ? Avec au moins 3 selles mol' +
+                'les.',
+
         input: {
             type: 'radio',
-            Number: 'Q6',
+            qNumber: 'Q6',
             answer: [
                 {
                     text: 'Oui',
@@ -402,12 +418,12 @@ const questions = [
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Ces derniers jours, avez-vous une fatigue inhabituelle qui vous a obligé à vous reposer plus de la moitié de la journée ?',
+
         input: {
             type: 'radio',
-            Number: 'Q7',
+            qNumber: 'Q7',
             answer: [
                 {
                     text: 'Oui',
@@ -418,12 +434,12 @@ const questions = [
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Avez-vous des difficultés importantes pour vous alimenter ou boire depuis plus de 24h ?',
+
         input: {
             type: 'radio',
-            Number: 'Q8',
+            qNumber: 'Q8',
             answer: [
                 {
                     text: 'Oui',
@@ -434,12 +450,12 @@ const questions = [
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Dans les dernières 24 heures, avez-vous noté un manque de souffle inhabituel lorsque vous parlez ou faites un petit effort ?',
+
         input: {
             type: 'radio',
-            Number: 'Q9',
+            qNumber: 'Q9',
             answer: [
                 {
                     text: 'Oui',
@@ -450,12 +466,12 @@ const questions = [
                 }
             ]
         }
-    },
-    {
-        question: 'Dans les dernières 24 heures, avez-vous noté un manque de souffle inhabituel lorsque vous parlez ou faites un petit effort ?',
+    }, {
+        question: 'Actuellement, comment vous vous sentez ?',
+
         input: {
             type: 'radio',
-            Number: 'Q10',
+            qNumber: 'Q10',
             answer: [
                 {
                     text: 'Bien',
@@ -463,51 +479,54 @@ const questions = [
                 }, {
                     text: 'Assez bien',
                     icon: ' far fa-smile'
-                },{
+                }, {
                     text: 'Fatigué(e)',
                     icon: ' far fa-frown'
-                },{
+                }, {
                     text: 'Très fatigué',
                     icon: 'far fa-dizzy'
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Quel est votre âge ? Ceci, afin de calculer un facteur de risque spécifique.',
+
         input: {
+
             type: 'number',
-            Number: 'Q11',
+            qNumber: 'Q11',
             name: 'ans',
             min: 15,
             max: 110
         }
-    },
-    {
-        question: 'Quel est votre poids ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection.',
+    }, {
+        question: 'Quel est votre poids ? Afin de calculer l’indice de masse corporelle qui est u' +
+                'n facteur influençant le risque de complications de l’infection.',
+
         input: {
             type: 'number',
-            Number: 'Q12',
+            qNumber: 'Q12',
             name: 'kg',
             min: 20,
             max: 250
         }
-    },
-    {
-        question: 'Quelle est votre taille ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection.',
+    }, {
+        question: 'Quelle est votre taille ? Afin de calculer l’indice de masse corporelle qui es' +
+                't un facteur influençant le risque de complications de l’infection.',
+
         input: {
             type: 'number',
-            Number: 'Q13',
+            qNumber: 'Q13',
             name: 'cm',
             min: 80,
             max: 250
         }
-    },
-    {
+    }, {
         question: 'Avez-vous de l’hypertension artérielle mal équilibrée ? Ou avez-vous une maladie cardiaque ou vasculaire ? Ou prenez-vous un traitement à visée cardiologique ?',
+
         input: {
             type: 'radio',
-            Number: 'Q14',
+            qNumber: 'Q14',
             answer: [
                 {
                     text: 'Oui',
@@ -518,12 +537,12 @@ const questions = [
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Êtes-vous diabétique ?',
+
         input: {
             type: 'radio',
-            Number: 'Q15',
+            qNumber: 'Q15',
             answer: [
                 {
                     text: 'Oui',
@@ -534,12 +553,12 @@ const questions = [
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Avez-vous ou avez-vous eu un cancer ?',
+
         input: {
             type: 'radio',
-            Number: 'Q16',
+            qNumber: 'Q16',
             answer: [
                 {
                     text: 'Oui',
@@ -550,12 +569,12 @@ const questions = [
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Avez-vous une maladie respiratoire ? Ou êtes-vous suivi par un pneumologue ?',
+
         input: {
             type: 'radio',
-            Number: 'Q17',
+            qNumber: 'Q17',
             answer: [
                 {
                     text: 'Oui',
@@ -566,12 +585,12 @@ const questions = [
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Avez-vous une insuffisance rénale chronique dialysée ?',
+
         input: {
             type: 'radio',
-            Number: 'Q18',
+            qNumber: 'Q18',
             answer: [
                 {
                     text: 'Oui',
@@ -582,12 +601,12 @@ const questions = [
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Avez-vous une maladie chronique du foie ?',
+
         input: {
             type: 'radio',
-            Number: 'Q19',
+            qNumber: 'Q19',
             answer: [
                 {
                     text: 'Oui',
@@ -598,12 +617,12 @@ const questions = [
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Êtes-vous enceinte ?',
+
         input: {
             type: 'radio',
-            Number: 'Q20',
+            qNumber: 'Q20',
             answer: [
                 {
                     text: 'Oui',
@@ -611,39 +630,19 @@ const questions = [
                 }, {
                     text: 'Non',
                     icon: 'fa-times'
-                },
-                {
+                }, {
                     text: 'Homme',
                     icon: 'fa-male'
 
                 }
             ]
         }
-    },
-    {
+    }, {
         question: 'Avez-vous une maladie connue pour diminuer vos défenses immunitaires ?',
-        input: {
-            type: 'radio',
-            Number: 'Q21',
-            answer: [
-                {
-                    text: 'Oui',
-                    icon: 'fa-check'
-                }, {
-                    text: 'Non',
-                    icon: 'fa-times'
-                },
-                
-            ]
-        }
-    },
-    {
-        question: 'Prenez-vous un traitement immunosuppresseur ? C’est un traitement qui diminue vos défenses contre les infections. Voici quelques exemples :'+  
-                  'corticoïdes, méhotrexate, ciclosporine, tacrolimus, azathioprine, cyclophosphamide (liste non   exhaustive).',
 
         input: {
             type: 'radio',
-            Number: 'Q22',
+            qNumber: 'Q21',
             answer: [
                 {
                     text: 'Oui',
@@ -651,9 +650,26 @@ const questions = [
                 }, {
                     text: 'Non',
                     icon: 'fa-times'
-                },
-                
+                }
             ]
         }
-    },
+    }, {
+        question: 'Prenez-vous un traitement immunosuppresseur ? C’est un traitement qui diminue ' +
+                'vos défenses contre les infections. Voici quelques exemples : corticoïdes, méthotrexate, ciclosporine, tacrolimus, azathioprine, cyclophosphamide (liste non exhaustive).',
+
+        input: {
+            type: 'radio',
+            qNumber: 'Q22',
+            answer: [
+                {
+                    text: 'Oui',
+                    icon: 'fa-check'
+                }, {
+                    text: 'Non',
+                    icon: 'fa-times'
+                }
+            ]
+        }
+    }
+
 ]
