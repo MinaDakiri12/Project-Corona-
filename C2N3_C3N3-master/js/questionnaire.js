@@ -90,7 +90,7 @@ previousBtn.addEventListener('click', () => {
 
     } else {
         nextBtn.innerText = 'Suivant'
-        nextBtn.innerText = 'Terminer le test'
+        nextBtn.innerText = 'Suivant'
        
 
         nextBtn
