@@ -565,7 +565,7 @@ a:hover {
 
 @media only screen and (max-width: 575px) {
   .Footer1__title {
-    font-size: 26px; }
+    font-size: 19px; }
   .Footer1__button {
     width: 90%; } }
 
@@ -694,7 +694,7 @@ a:hover {
     text-decoration: none;
     font-size: 22px;
     color: #FFFFFF;
-    background-image: url(/C2N3_C3N3-master/Design/Assets/png/btn-bg.png);
+    background-image: url("/Design/Assets/png/btn-bg.png");
     width: 25%;
     border-radius: 7px; }
 
