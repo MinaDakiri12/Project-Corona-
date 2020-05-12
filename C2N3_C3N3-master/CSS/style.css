@@ -444,7 +444,9 @@ a:hover {
 
 .footer__logo {
   display: block;
-  margin: 20px auto; }
+  margin: 20px auto;
+  width: 2px;
+  height: auto; }
 
 .footer__left--title {
   color: #1078AD;
