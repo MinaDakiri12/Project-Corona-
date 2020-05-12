@@ -90,9 +90,7 @@ previousBtn.addEventListener('click', () => {
 
     } else {
         nextBtn.innerText = 'Suivant'
-        nextBtn.innerText = 'Suivant'
-       
-
+        
         nextBtn
             .classList
             .remove('results')
