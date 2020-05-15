@@ -33,9 +33,7 @@ nextBtn.addEventListener('click', () => {
         if (currentQuestionIndex === 21) {
             nextBtn.innerText = 'Terminer le test'
 
-            nextBtn
-            .classList
-            .add('result')
+            nextBtn.classList.add('result')
            const resultBtn = document.querySelector('.result')
           resultBtn.addEventListener('click', Results)
           
@@ -60,9 +58,7 @@ previousBtn.addEventListener('click', () => {
     } else {
         nextBtn.innerText = 'Suivant'
         
-        nextBtn
-            .classList
-            .remove('results')
+        nextBtn.classList.remove('results')
     }
 })
 
@@ -73,25 +69,19 @@ let currentQuestionIndex = 0
 function previous() {
 
     if (currentQuestionIndex === 0) {
-        previousBtn
-            .classList
-            .add('hide')
+        previousBtn.classList.add('hide')
     } else {
-        previousBtn
-            .classList
-            .remove('hide')
+        previousBtn.classList.remove('hide')
     }
 }
 
 function startTest() {
     stepper[0]
-        .classList
-        .remove('select')
+        .classList.remove('select')
         
         
     stepper[1]
-        .classList
-        .add('select')
+        .classList.add('select')
     testBtn.style.display = 'none'
     Préambule.style.display = 'none'
     questionnaire.style.display = 'block'
