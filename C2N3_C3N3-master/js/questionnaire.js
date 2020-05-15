@@ -17,40 +17,9 @@ const resultMessage = document.querySelectorAll('.Résultats p')
 
 //      Event Listener
 
-
 testBtn.addEventListener('click', startTest)
 
-animateBox.addEventListener('change', (e) => {
 
-    const input = e.target
-
-    if (input.type === 'number') {
-
-        const number = parseFloat(input.value)
-
-        if (number >= input.min && number <= input.max) {
-
-            answers[input.name] = input
-                .value
-                console
-                .log(answers);
-
-            nextBtn.disabled = false
-        } else {
-            nextBtn.disabled = true
-
-        }
-
-    } else {
-
-        answers[input.name] = input
-            .id
-            console
-            .log(answers);
-        nextBtn.disabled = false
-    }
-
-})
 
 
 nextBtn.addEventListener('click', () => {
@@ -237,91 +206,33 @@ function Results() {
 
 
 
+animateBox.addEventListener('change', (e) => {
 
+    const input = e.target
 
+    if (input.type === 'number') {
 
+        const number = parseFloat(input.value)
 
+        if (number >= input.min && number <= input.max) {
 
+            answers[input.name] = input.value
+                console.log(answers);
 
+            nextBtn.disabled = false
+        } else {
+            nextBtn.disabled = true
 
+        }
 
+    } else {
 
+        answers[input.name] = input.id
+            console.log(answers);
+        nextBtn.disabled = false
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+})
 
 
 const questions = [
